@@ -1,0 +1,15 @@
+# Borna Font Files
+
+Place the following font files in this directory:
+
+- Borna-Regular.otf
+- Borna-RegularItalic.otf
+- Borna-Medium.otf
+- Borna-MediumItalic.otf
+- Borna-SemiBold.otf
+- Borna-SemiBoldItalic.otf
+- Borna-Bold.otf
+- Borna-BoldItalic.otf
+
+Note: Font files are not included in this repository due to licensing.
+Please add your licensed Borna font files here before deploying.
