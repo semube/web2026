@@ -7,6 +7,7 @@
     <meta name="color-scheme" content="light dark">
     <title>Dr. Sebastian Müller-Bellé</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/cv-section.css">
     <script>
         (function() {
             var saved = localStorage.getItem('theme');
@@ -27,6 +28,7 @@
                     <li><a href="#intro" class="nav-link" data-section="intro">INTRO</a></li>
                     <li><a href="#links" class="nav-link" data-section="links">LINKS</a></li>
                     <li><a href="#memberships" class="nav-link" data-section="memberships">MEMBERSHIPS</a></li>
+                    <li><a href="#cv" class="nav-link" data-section="cv">CURRICULUM VITAE</a></li>
                 </ul>
             </nav>
             <button 
@@ -91,7 +93,7 @@
         <section id="memberships" class="section section-memberships" aria-labelledby="memberships-heading">
             <div class="container">
                 <div class="section-content reveal">
-                    <h2 id="memberships-heading" class="label-heading">Memberships & Supported Organizations</h2>
+                    <h2 id="memberships-heading" class="label-heading">Memberships &amp; Supported Organizations</h2>
                     <ul class="membership-list" role="list">
                         <li class="membership-item">
                             <a href="https://www.plan.de" class="link-row" target="_blank" rel="noopener noreferrer">
@@ -121,6 +123,197 @@
                 </div>
             </div>
         </section>
+
+        <hr class="section-divider" aria-hidden="true">
+
+        <section id="cv" class="section section-cv" aria-labelledby="cv-heading">
+            <div class="container">
+                <div class="section-content reveal">
+                    <h2 id="cv-heading" class="label-heading">Curriculum Vitae</h2>
+                    <p class="cv-intro">Protected section. Enter the password to unlock and expand the full CV.</p>
+
+                    <form id="cv-gate" class="cv-gate" autocomplete="off">
+                        <label for="cv-password" class="cv-password-label">Password</label>
+                        <div class="cv-gate-row">
+                            <input
+                                type="password"
+                                id="cv-password"
+                                name="cv-password"
+                                class="cv-password-input"
+                                placeholder="Enter password"
+                                aria-describedby="cv-status"
+                                required
+                            >
+                            <button type="submit" class="cv-password-button">Unlock CV</button>
+                        </div>
+                    </form>
+
+                    <p id="cv-status" class="cv-status" aria-live="polite"></p>
+                    <noscript><p class="cv-status is-error">JavaScript is required to unlock and expand the Curriculum Vitae section.</p></noscript>
+
+                    <details id="cv-details" class="bio-details cv-details" hidden>
+                        <summary class="bio-summary">
+                            <span class="bio-summary-text">View curriculum vitae</span>
+                            <span class="bio-summary-icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="bio-content cv-content">
+                            <header class="cv-header">
+                                <h3 class="cv-name">Dr. Sebastian Müller-Bellé</h3>
+                                <p class="cv-tagline">Partner at Deloitte Consulting | Transforming Life Sciences &amp; Health Care through AI-Enabled Commercial Excellence</p>
+                                <p class="cv-contact">
+                                    <span><strong>Email:</strong> <a href="mailto:sebastian@mueller-belle.de">sebastian@mueller-belle.de</a></span>
+                                    <span><strong>Phone:</strong> <a href="tel:+4915154665500">+49 151 54665500</a></span>
+                                    <span><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/semube" target="_blank" rel="noopener noreferrer">linkedin.com/in/semube</a></span>
+                                </p>
+                            </header>
+
+                            <div class="cv-block">
+                                <h4 class="cv-block-title">Professional Summary</h4>
+                                <p>Partner at Deloitte Consulting with 20+ years of expertise in driving commercial transformations across sales, service, marketing, and commerce for global Life Sciences and Health Care organizations. Specialized in translating business strategy into customer-centric operating models, leveraging AI, cloud technologies, and data analytics to create measurable value. Proven track record leading multinational teams through complex transformations for industry leaders including Olympus, Roche, Novartis, Fresenius, and Siemens Healthineers. Doctoral degree in Positive Psychology at Work and MBA in International Management underpin a human-centered approach to organizational change. Passionate advocate for AI adoption in consulting, practicing what I preach by continuously experimenting with emerging technologies.</p>
+                            </div>
+
+                            <div class="cv-block">
+                                <h4 class="cv-block-title">Selected Core Competencies</h4>
+                                <div class="cv-competency-grid">
+                                    <section class="cv-subblock" aria-labelledby="cv-competency-strategic">
+                                        <h5 id="cv-competency-strategic" class="cv-subblock-title">Strategic Leadership</h5>
+                                        <ul class="cv-list">
+                                            <li>Commercial Transformation Strategy</li>
+                                            <li>Customer Engagement &amp; Experience Design</li>
+                                            <li>Global Governance Models</li>
+                                            <li>AI-Enabled Business Innovation</li>
+                                        </ul>
+                                    </section>
+                                    <section class="cv-subblock" aria-labelledby="cv-competency-industry">
+                                        <h5 id="cv-competency-industry" class="cv-subblock-title">Industry Expertise</h5>
+                                        <ul class="cv-list">
+                                            <li>Life Sciences (Pharma &amp; MedTech)</li>
+                                            <li>Health Care (Providers &amp; Payers)</li>
+                                            <li>Chemicals</li>
+                                            <li>High-Tech Manufacturing</li>
+                                        </ul>
+                                    </section>
+                                    <section class="cv-subblock" aria-labelledby="cv-competency-technology">
+                                        <h5 id="cv-competency-technology" class="cv-subblock-title">Technology &amp; Implementation</h5>
+                                        <ul class="cv-list">
+                                            <li>Cloud-Based CRM Platforms (Salesforce, Microsoft Dynamics 365, Power Platform)</li>
+                                            <li>AI &amp; Analytics Integration</li>
+                                            <li>Enterprise Architecture Design</li>
+                                            <li>Vendor Selection &amp; Roadmap Development</li>
+                                        </ul>
+                                    </section>
+                                    <section class="cv-subblock" aria-labelledby="cv-competency-delivery">
+                                        <h5 id="cv-competency-delivery" class="cv-subblock-title">Delivery Excellence</h5>
+                                        <ul class="cv-list">
+                                            <li>Global Program Management (&gt;€5M, &gt;100 FTE)</li>
+                                            <li>Change Management &amp; Adoption</li>
+                                            <li>Cross-Functional Team Leadership</li>
+                                            <li>Business Process Re-Engineering (BPMN)</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+
+                            <div class="cv-block">
+                                <h4 class="cv-block-title">Professional Experience</h4>
+                                <p class="cv-note"><strong>Deloitte Consulting GmbH</strong> | Cologne/Düsseldorf, Germany</p>
+
+                                <article class="cv-role">
+                                    <div class="cv-role-header">
+                                        <h5 class="cv-role-title">Partner | Deloitte Digital – Life Sciences &amp; Health Care</h5>
+                                        <span class="cv-role-period">June 2025 – Present</span>
+                                    </div>
+                                    <ul class="cv-role-list">
+                                        <li>Lead customer and patient engagement practice for LSHC sector, driving profitable growth through AI-enabled commercial transformations.</li>
+                                        <li>Spearhead business development for German-headquartered global Life Sciences clients, with cross-border collaboration across Swiss and US member firms.</li>
+                                        <li>Define go-to-market strategies integrating emerging AI technologies into customer domain solutions.</li>
+                                        <li>Mentor leadership talent group of 50+ consultants focused on emerging technologies in sales, service, and marketing.</li>
+                                    </ul>
+                                </article>
+
+                                <article class="cv-role">
+                                    <div class="cv-role-header">
+                                        <h5 class="cv-role-title">Director | Deloitte Digital – Life Sciences &amp; Health Care</h5>
+                                        <span class="cv-role-period">June 2021 – May 2025</span>
+                                    </div>
+                                    <ul class="cv-role-list">
+                                        <li><strong>Transformed commercial capabilities</strong> for leading MedTech manufacturer (Olympus/Evident): Led global CRM transformation across 30+ markets, implementing AI-driven customer segmentation and cloud-based Salesforce platform, resulting in 25% improvement in sales productivity.</li>
+                                        <li><strong>Redesigned service operating model</strong> for pharmaceutical multinational: Developed shared service center strategy and implemented Microsoft Dynamics 365 for field service operations, consolidating 15 regional systems and reducing service response time by 40%.</li>
+                                        <li><strong>Established data-driven marketing</strong> for Healthcare provider: Designed analytics competency center and customer journey orchestration, enabling personalized patient engagement and improving campaign conversion rates by 35%.</li>
+                                        <li>Served as QA partner and subject matter advisor for transformation programs exceeding €10M annual budget.</li>
+                                        <li>Led pursuit activities generating €25M+ in new business across LSHC portfolio.</li>
+                                    </ul>
+                                </article>
+
+                                <article class="cv-role">
+                                    <div class="cv-role-header">
+                                        <h5 class="cv-role-title">Senior Manager | Deloitte Digital – Customer &amp; CRM</h5>
+                                        <span class="cv-role-period">September 2005 – May 2021</span>
+                                    </div>
+                                    <ul class="cv-role-list">
+                                        <li><strong>Pioneered customer segmentation methodology</strong> for Chemicals leader (BASF): Developed B2B segmentation framework and value proposition design, restructuring sales organization across 40+ countries and unlocking €50M incremental revenue opportunity.</li>
+                                        <li><strong>Delivered enterprise CRM implementations</strong> for Automotive (BMW, VW) and Industrial clients: Managed end-to-end system selection, process design, and global rollout of Salesforce and SAP CRM solutions.</li>
+                                        <li><strong>Built analytics capabilities</strong> for High-Tech Manufacturing clients (Infineon, Siemens): Designed big data architectures using Tableau and established predictive modeling for customer lifetime value optimization.</li>
+                                        <li>Published three editions of industry study “Know and Serve Your Customers: Practice and Potential of Customer Segmentation” (2006, 2008, 2013).</li>
+                                        <li>Established internal learning format based on positive psychology principles to foster leadership development across firm.</li>
+                                    </ul>
+                                </article>
+                            </div>
+
+                            <div class="cv-block">
+                                <h4 class="cv-block-title">Education &amp; Certifications</h4>
+
+                                <div class="cv-entry">
+                                    <h5 class="cv-entry-title">Doctor of Philosophy (Ph.D.) in Positive Psychology at Work</h5>
+                                    <p class="cv-entry-meta">2013 – 2020 | University of Humanistic Studies Utrecht, The Netherlands</p>
+                                    <p>Thesis: “In Pursuit of Meaningfulness in Work - The Individual Consultant's Attitude to the Profession of Management Consulting”</p>
+                                </div>
+
+                                <div class="cv-entry">
+                                    <h5 class="cv-entry-title">Master of Business Administration (MBA) in International Management</h5>
+                                    <p class="cv-entry-meta">2010 – 2012 | European University of Applied Sciences Hamburg, Germany</p>
+                                    <p>Majors: International Marketing, Innovation Management, International Economic Relations | Grade: 1.8</p>
+                                </div>
+
+                                <div class="cv-entry">
+                                    <h5 class="cv-entry-title">Diploma in Business Informatics (FH)</h5>
+                                    <p class="cv-entry-meta">2001 – 2005 | Rheinische Fachhochschule Köln (University of Applied Sciences), Germany</p>
+                                    <p>Majors: E-Business, Customer Relationship Management, Business Intelligence Systems | Grade: 1.5</p>
+                                </div>
+
+                                <div class="cv-entry">
+                                    <h5 class="cv-entry-title">Professional Certifications</h5>
+                                    <ul class="cv-list">
+                                        <li>Deloitte Lean Six Sigma Yellow Belt (2010)</li>
+                                        <li>Project Management (PMI-based methodology) (2011)</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="cv-block cv-skills">
+                                <h4 class="cv-block-title">Technical Skills</h4>
+                                <p><strong>Enterprise Applications:</strong> Salesforce (Sales, Service, Marketing Cloud) | Microsoft Dynamics 365 &amp; Power Platform | SAP CRM | Oracle CX | Microsoft 365</p>
+                                <p><strong>Analytics &amp; BI:</strong> Tableau | Power BI | Advanced Excel | StratBridge</p>
+                                <p><strong>Process &amp; Project Management:</strong> BPMN/ARIS Process Modelling | PMI Methodology | Agile/Scrum | Confluence | JIRA</p>
+                                <p><strong>AI &amp; Emerging Tech:</strong> Generative AI Tools | AI-Enabled CRM Solutions | Predictive Analytics</p>
+                            </div>
+
+                            <div class="cv-block cv-languages">
+                                <h4 class="cv-block-title">Languages</h4>
+                                <p><strong>German:</strong> Native</p>
+                                <p><strong>English:</strong> Business Fluent (oral &amp; written)</p>
+                                <p><strong>French:</strong> Conversational</p>
+                            </div>
+
+                            <div class="cv-block">
+                                <h4 class="cv-block-title">Personal Interests</h4>
+                                <p>Beyond consulting, I am deeply committed to cultural preservation and humanitarian causes. I support childhood education through godparentships with Plan International Germany and actively engage with Cologne's cultural heritage as a member of the Kölnischer Kunstverein, Freunde des Historischen Archivs der Stadt Köln e.V., and Förderverein Geschichte in Köln. These involvements reflect my belief in giving back to society and preserving knowledge for future generations—values that also guide my professional commitment to sustainable, human-centered business transformation.</p>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="site-footer" role="contentinfo">
@@ -130,5 +323,6 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/cv-lock.js"></script>
 </body>
 </html>
