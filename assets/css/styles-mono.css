@@ -410,12 +410,6 @@ main {
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tight);
     letter-spacing: var(--tracking-tight);
-    color: var(--color-text);
-}
-
-/* Background image clipped to text for title-primary */
-
-.title-primary {
     background-image: url('../images/title-bg.jpg');
     background-size: cover;
     background-position: center;
