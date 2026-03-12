@@ -410,12 +410,13 @@ main {
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tight);
     letter-spacing: var(--tracking-tight);
-    background-image: url('../images/title-bg.jpg');
+    background-image: url('../images/header-smb.jpg');
     background-size: cover;
     background-position: center;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
 .headline {
