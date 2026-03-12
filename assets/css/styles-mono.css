@@ -825,4 +825,15 @@ main {
         outline: 2px solid var(--color-focus);
         outline-offset: 4px;
     }
+
+/* Background image clipped to text for title-primary */
+.title-primary {
+    background-image: url('../images/title-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+   }
 }
