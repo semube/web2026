@@ -10,10 +10,17 @@
     <link rel="stylesheet" href="assets/css/cv-section.css">
     <script>
         (function() {
-            var saved = localStorage.getItem('theme');
+            var saved = null;
+            var mode = null;
+            try {
+                saved = localStorage.getItem('theme');
+                mode = localStorage.getItem('theme-mode');
+            } catch (e) {}
             var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            var theme = saved || (prefersDark ? 'dark' : 'light');
+            var followsSystem = mode === 'auto' || (!mode && !saved);
+            var theme = followsSystem ? (prefersDark ? 'dark' : 'light') : (saved || 'light');
             document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('data-theme-mode', followsSystem ? 'auto' : 'manual');
         })();
     </script>
 </head>
@@ -31,15 +38,27 @@
                     <li><a href="#cv" class="nav-link" data-section="cv">CURRICULUM VITAE</a></li>
                 </ul>
             </nav>
-            <button 
-                type="button" 
-                class="theme-toggle" 
-                id="theme-toggle"
-                aria-label="Toggle dark mode"
-                title="Toggle dark mode"
-            >
-                <span class="theme-toggle-icon" aria-hidden="true"></span>
-            </button>
+            <div class="header-actions" aria-label="Theme controls">
+                <button
+                    type="button"
+                    class="theme-auto"
+                    id="theme-auto"
+                    aria-pressed="true"
+                    aria-label="Follow system theme"
+                    title="Follow system theme"
+                >
+                    Auto
+                </button>
+                <button
+                    type="button"
+                    class="theme-toggle"
+                    id="theme-toggle"
+                    aria-label="Toggle dark mode"
+                    title="Toggle dark mode"
+                >
+                    <span class="theme-toggle-icon" aria-hidden="true"></span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -78,9 +97,15 @@
                             </a>
                         </li>
                         <li class="link-item">
-                            <a href="mailto:you@example.com" class="link-row">
-                                <span class="link-text">Email <span class="link-note">(placeholder)</span></span>
-                                <span class="link-arrow" aria-hidden="true">→</span>
+                            <a href="https://www.deloitte.com/de/de/about/people/profiles.smuellerbelle+74f5f021.html" class="link-row" target="_blank" rel="noopener noreferrer">
+                                <span class="link-text">Deloitte <span class="link-note">(English)</span></span>
+                                <span class="link-arrow" aria-hidden="true">↗</span>
+                            </a>
+                        </li>
+                        <li class="link-item">
+                            <a href="https://www.deloitte.com/de/de/about/people/profiles.smuellerbelle+7505b42c.html" class="link-row" target="_blank" rel="noopener noreferrer">
+                                <span class="link-text">Deloitte <span class="link-note">(German)</span></span>
+                                <span class="link-arrow" aria-hidden="true">↗</span>
                             </a>
                         </li>
                     </ul>

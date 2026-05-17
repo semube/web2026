@@ -233,11 +233,16 @@ html[data-theme="dark"] .cv-entry + .cv-entry {
     }
 
     .cv-password-input {
+        flex: 0 1 auto;
         min-width: 0;
+        height: 52px;
+        padding: 0.75rem 0.9rem;
+        line-height: 1.2;
     }
 
     .cv-password-button {
         width: 100%;
+        padding: 0.8rem 1rem;
     }
 
     .cv-role-header,

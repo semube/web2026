@@ -313,6 +313,53 @@ body {
    Theme Toggle
    ========================================================================== */
 
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.theme-auto {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 12px;
+    background: transparent;
+    border: 1px solid var(--color-border-strong);
+    border-radius: 999px;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    transition: border-color var(--duration-fast) var(--ease-out),
+                background-color var(--duration-fast) var(--ease-out),
+                color var(--duration-fast) var(--ease-out);
+}
+
+.theme-auto:hover,
+.theme-auto:focus-visible {
+    border-color: var(--color-text-muted);
+    color: var(--color-text);
+}
+
+.theme-auto.is-active {
+    background-color: var(--color-text);
+    border-color: var(--color-text);
+    color: var(--color-bg);
+}
+
+.theme-auto:focus {
+    outline: none;
+}
+
+.theme-auto:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+}
+
 .theme-toggle {
     display: flex;
     align-items: center;
@@ -735,8 +782,9 @@ main {
         --space-2xl: 72px;
         --space-xl: 48px;
         --space-lg: 32px;
-        --header-height: 56px;
-        --font-size-h1: clamp(32px, 7vw, 44px);
+        /* Mobile header wraps into two rows; reserve the full fixed-header height plus breathing room so it cannot crowd the intro title. */
+        --header-height: 132px;
+        --font-size-h1: clamp(30px, 7vw, 40px);
     }
     
     .header-inner {
@@ -748,8 +796,16 @@ main {
         order: 1;
     }
     
-    .theme-toggle {
+    .header-actions {
         order: 2;
+    }
+
+    .theme-auto {
+        height: 36px;
+        padding: 0 10px;
+    }
+
+    .theme-toggle {
         width: 36px;
         height: 36px;
     }
@@ -773,7 +829,15 @@ main {
     
     .nav-list {
         justify-content: flex-start;
-        gap: var(--space-md);
+        gap: clamp(var(--space-xs), 3vw, var(--space-sm));
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-list::-webkit-scrollbar {
+        display: none;
     }
     
     .nav-link {
@@ -788,11 +852,12 @@ main {
     }
     
     .section-intro {
-        padding-top: var(--space-xl);
+        padding-top: calc(var(--space-xl) + var(--space-sm));
     }
     
     .title-primary {
         margin-bottom: var(--space-xs);
+        max-width: 16ch;
     }
     
     .headline {
@@ -825,6 +890,7 @@ main {
 @supports not selector(:focus-visible) {
     .nav-link:focus,
     .link-row:focus,
+    .theme-auto:focus,
     .theme-toggle:focus,
     .bio-summary:focus,
     .skip-link:focus {
