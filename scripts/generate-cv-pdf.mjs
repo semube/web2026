@@ -157,7 +157,7 @@ const name = clean(header.find('.cv-name').text());
 const tagline = clean(header.find('.cv-tagline').text());
 const contact = header.find('.cv-contact span').map((_, el) => clean($(el).text())).get().join('   |   ');
 
-doc.font('Borna-Bold').fontSize(22).fillColor('#111111').text(name, page.left, doc.y, {
+doc.font('Borna-Bold').fontSize(24).fillColor('#111111').text(name, page.left, doc.y, {
   width: contentWidth,
   lineGap: 1,
 });
