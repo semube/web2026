@@ -102,6 +102,7 @@ Common updates:
 - Memberships and supported organizations: edit the corresponding section in `index.html`
 - CV content and access behavior: edit `index.html`, `assets/css/cv-section.css`, and `assets/js/cv-lock.js` as needed
 - CV PDF download: regenerate `assets/files/sebastian-mueller-belle-cv.pdf` after CV content changes with `npm install` and `npm run generate:cv-pdf`
+- Favicon and home-screen icons: generated from `assets/images/header-smb.jpg`; regenerate with `npm run generate:favicons` after replacing the header image
 
 ## Styling Guide
 
@@ -130,6 +131,9 @@ node --check assets/js/cv-lock.js
 # Regenerate the downloadable CV PDF after CV content changes
 npm run generate:cv-pdf
 
+# Regenerate favicon/home-screen assets after header image changes
+npm run generate:favicons
+
 # Serve locally and smoke-test the page
 python3 -m http.server 4173
 ```
@@ -137,7 +141,7 @@ python3 -m http.server 4173
 Then verify in a browser:
 
 - Homepage loads successfully
-- CSS and JavaScript assets load without 404s
+- CSS, JavaScript, favicon, manifest, and touch-icon assets load without 404s
 - Header image displays correctly
 - Navigation anchors work
 - Light/dark mode works
