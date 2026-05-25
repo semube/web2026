@@ -18,6 +18,7 @@ fs.mkdirSync(path.dirname(outputPath), { recursive: true });
 const doc = new PDFDocument({
   size: 'A4',
   margins: { top: 42, right: 42, bottom: 48, left: 42 },
+  bufferPages: true,
   info: {
     Title: 'Curriculum Vitae - Dr. Sebastian Müller-Bellé',
     Author: 'Dr. Sebastian Müller-Bellé',
@@ -47,22 +48,19 @@ const page = {
   bottom: doc.page.height - doc.page.margins.bottom,
 };
 const contentWidth = page.width - page.left - page.right;
-let pageNumber = 1;
 
 function addPage() {
-  footer();
   doc.addPage();
-  pageNumber += 1;
 }
 
-function footer() {
+function footer(pageNumber, totalPages) {
   // Keep the footer inside PDFKit's printable area. Placing it below the
   // bottom margin triggers PDFKit's automatic page break and creates an
   // extra blank page that only contains footer/header text.
   const y = page.bottom - 22;
   doc.save();
   doc.font('Basier').fontSize(7).fillColor('#777777');
-  doc.text(`Curriculum Vitae · Dr. Sebastian Müller-Bellé · Page ${pageNumber}`, page.left, y, {
+  doc.text(`Curriculum Vitae · Dr. Sebastian Müller-Bellé · Page ${pageNumber} of ${totalPages}`, page.left, y, {
     width: contentWidth,
     align: 'center',
     lineBreak: false,
@@ -234,7 +232,12 @@ cv.children('.cv-block').each((_, block) => {
   });
 });
 
-footer();
+const pageRange = doc.bufferedPageRange();
+for (let i = pageRange.start; i < pageRange.start + pageRange.count; i += 1) {
+  doc.switchToPage(i);
+  footer(i - pageRange.start + 1, pageRange.count);
+}
+
 doc.end();
 
 await new Promise((resolve, reject) => {
