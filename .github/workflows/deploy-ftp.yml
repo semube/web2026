@@ -21,6 +21,7 @@ jobs:
           server: wp1094792.server-he.de
           username: ftp1094792-smb
           password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
           server-dir: /www/
           local-dir: ./
           exclude: |
