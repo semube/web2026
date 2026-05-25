@@ -56,12 +56,16 @@ function addPage() {
 }
 
 function footer() {
-  const y = doc.page.height - 31;
+  // Keep the footer inside PDFKit's printable area. Placing it below the
+  // bottom margin triggers PDFKit's automatic page break and creates an
+  // extra blank page that only contains footer/header text.
+  const y = page.bottom - 22;
   doc.save();
   doc.font('Basier').fontSize(7).fillColor('#777777');
   doc.text(`Curriculum Vitae · Dr. Sebastian Müller-Bellé · Page ${pageNumber}`, page.left, y, {
     width: contentWidth,
     align: 'center',
+    lineBreak: false,
   });
   doc.restore();
 }
