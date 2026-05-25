@@ -170,9 +170,21 @@ paragraph(contact, { size: 8.8, font: 'Basier', color: '#444444', gapAfter: 10 }
 doc.moveTo(page.left, doc.y).lineTo(page.left + contentWidth, doc.y).lineWidth(0.7).strokeColor('#cfcfcf').stroke();
 doc.moveDown(1);
 
+const manualPageBreakBefore = new Set([
+  'Professional Experience',
+  'Education & Certifications',
+]);
+
 cv.children('.cv-block').each((_, block) => {
   const $block = $(block);
-  heading($block.children('.cv-block-title').first().text());
+  const blockTitle = clean($block.children('.cv-block-title').first().text());
+
+  if (manualPageBreakBefore.has(blockTitle) && doc.y > doc.page.margins.top + 4) {
+    addPage();
+    doc.y = doc.page.margins.top;
+  }
+
+  heading(blockTitle);
 
   $block.children().each((__, child) => {
     const $child = $(child);
