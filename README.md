@@ -101,6 +101,7 @@ Common updates:
 - Deloitte profile links: English and German profile URLs are listed separately in the Connect section
 - Memberships and supported organizations: edit the corresponding section in `index.html`
 - CV content and access behavior: edit `index.html`, `assets/css/cv-section.css`, and `assets/js/cv-lock.js` as needed
+- CV PDF download: regenerate `assets/files/sebastian-mueller-belle-cv.pdf` after CV content changes with `npm install` and `npm run generate:cv-pdf`
 
 ## Styling Guide
 
@@ -126,6 +127,9 @@ Before committing changes, run a quick static check:
 node --check assets/js/main.js
 node --check assets/js/cv-lock.js
 
+# Regenerate the downloadable CV PDF after CV content changes
+npm run generate:cv-pdf
+
 # Serve locally and smoke-test the page
 python3 -m http.server 4173
 ```
@@ -139,6 +143,7 @@ Then verify in a browser:
 - Light/dark mode works
 - Auto theme mode follows the user’s OS color-scheme setting unless a manual override is selected
 - CV section behaves as expected
+- CV PDF download appears only after unlocking the protected section and opens/downloads successfully
 - Mobile layout remains usable
 - Mobile header/navigation does not overlap the name/title
 - Mobile CV password input remains compact and aligned with the unlock button

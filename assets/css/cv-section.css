@@ -105,6 +105,38 @@ html[data-theme="dark"] .cv-status.is-success {
     display: none;
 }
 
+.cv-actions {
+    display: flex;
+    justify-content: flex-start;
+    margin: 1.25rem 0 1.75rem;
+}
+
+.cv-download-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.15rem;
+    border: 1px solid currentColor;
+    border-radius: 0.35rem;
+    color: inherit;
+    font: inherit;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.cv-download-button:hover,
+.cv-download-button:focus-visible {
+    background: currentColor;
+    color: #ffffff;
+}
+
+html[data-theme="dark"] .cv-download-button:hover,
+html[data-theme="dark"] .cv-download-button:focus-visible {
+    color: #101010;
+}
+
 .cv-content {
     display: grid;
     gap: 1.75rem;

@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "generate:cv-pdf": "node scripts/generate-cv-pdf.mjs"
+  },
+  "devDependencies": {
+    "cheerio": "1.2.0",
+    "pdfkit": "0.18.0"
+  }
+}
