@@ -431,7 +431,8 @@ main {
 }
 
 .section-links,
-.section-memberships {
+.section-memberships,
+.section-cv {
     padding: var(--space-xl) 0;
 }
 
