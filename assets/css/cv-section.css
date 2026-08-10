@@ -1,3 +1,7 @@
+.section-cv {
+    padding-top: var(--space-lg);
+}
+
 .section-cv .section-content {
     display: block;
 }
